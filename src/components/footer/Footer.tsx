@@ -43,9 +43,25 @@ const Footer = () => {
     },
   ];
 
+  const otherLinks: IQuickLink[] = [
+    {
+      title:"Terms of Use",
+      path:"/"
+    },
+    {
+      title:"Privacy Policy",
+      path:"/"
+    },
+    {
+      title:"Cookie Policy",
+      path:"/"
+    },
+
+  ]
+
   return (
     <>
-    <section className="mt-16 px-8 sm:px-16 lg:px-32 py-16 flex justify-between items-start gap-16 bg-[#F6F6F7] dark:bg-black dark:text-white">
+    <section className="mt-16 px-8 sm:px-16 lg:px-32 py-16 flex justify-between items-start gap-16 bg-[#F6F6F7] dark:bg-[#141624] dark:text-white ">
     
       <div className="flex flex-col gap-3">
         <h4 className="text-lg">About</h4>
@@ -67,7 +83,7 @@ const Footer = () => {
       <div className="flex gap-20 px-16">
       <div className=" flex flex-col gap-6">
         <h4>Quick Link</h4>
-        <div className="flex flex-col gap-2 text-descriptionColor">
+        <div className="flex flex-col gap-2 text-descriptionColor dark:text-darkDescription">
           {quickLinks.map((link, index) => (
             <Link key={link.title + index} href={link.path}>
               {link.title}
@@ -78,7 +94,7 @@ const Footer = () => {
 
       <div className=" flex flex-col gap-6">
         <h4>Category</h4>
-        <div className="flex flex-col gap-2 text-descriptionColor">
+        <div className="flex flex-col gap-2 text-descriptionColor dark:text-darkDescription">
           {categoryLinks.map((link, index) => (
             <Link key={link.title + index} href={link.path}>
               {link.title}
@@ -90,7 +106,7 @@ const Footer = () => {
 
     
 
-      <div className="p-12 flex flex-col gap-5 bg-white rounded-xl border-b-orange">
+      <div className="p-12 flex flex-col gap-5 bg-white dark:dark:bg-[#141624] rounded-xl border-b-orange">
         <div className="flex flex-col items-center gap-2">
           <h4 className="text-titleColor text-xl font-semibold">Weekly Newsletter</h4>
           <p>Get Blogs and Articles via email</p>
@@ -123,15 +139,27 @@ const Footer = () => {
             </svg>
 
           </div>
-          <Button className="bg-blue-600 w-full hover:bg-blue-800">Subscribe</Button>
+          <Button className="bg-blue-600 w-full hover:bg-blue-800 dark:text-white">Subscribe</Button>
         </div>
       </div>
     </section>
 
-    <div className="pt-16 bg-[#F6F6F7] px-8 sm:px-16 lg:px-32 py-16 flex justify-between items-center ">
+    <div className="px-8 sm:px-16 lg:px-32  bg-[#F6F6F7] dark:bg-[#141624]">
+  <hr className="border-[#DCDDDF] dark:border-[#242535]" />
+</div>
+
+
+    <div className="bg-[#F6F6F7] dark:bg-[#141624] px-8 sm:px-16 lg:px-32 py-16 flex justify-between items-center">
         <div className="flex flex-col">
-          <p className="text-xl text-[#141624]">Next<span className="text-xl font-extrabold text-[#141624]">Blog</span></p>
+          <p className="text-xl text-[#141624]
+          dark:text-white">Next<span className="text-xl font-extrabold text-[#18181b] dark:text-white">Blog</span></p>
           <p>All Rights Reserved.</p>
+        </div>
+
+        <div className="text-descriptionColor dark:text-darkDescription flex gap-4">
+         {otherLinks.map((link,index)=>(
+          <Link href={link.path} key={index}>{link.title}</Link>
+         ))}
         </div>
     </div>
     </>

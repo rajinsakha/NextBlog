@@ -20,10 +20,13 @@ module.exports = {
       colors: {
         customgrey: "#F4F4F5",
         titleColor: "#181A2A",
+
         descriptionColor: "#3B3C4A",
+        darkDescription: "#BABABF",
         iconBg: "#4B6BFB",
         subColor:'#97989F',
         borderColor: "#E8E8EA",
+        darkBorder:"#242535",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
