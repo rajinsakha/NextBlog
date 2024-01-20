@@ -3,16 +3,16 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import { Switch } from "../ui/switch";
 import { Button } from "../ui/button";
-import { useTheme } from "@/context/ThemeContext";
+
 import Links from "./links/Links";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
 import Image from "next/image";
+import { ModeToggle } from "../ui/modeToggle";
 
 const Navbar = () => {
-  const { toggleTheme } = useTheme();
+ 
 
   const session = true;
 
@@ -52,7 +52,8 @@ const Navbar = () => {
             <Link href="/login">Login</Link>
           )}
         </Button>
-        <Switch onClick={toggleTheme} />
+        {/* <Switch onClick={toggleTheme} /> */}
+        <ModeToggle />
       </div>
 
       <div className="hidden max-lg:flex max-lg:items-center">

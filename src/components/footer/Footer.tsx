@@ -2,6 +2,7 @@ import { IQuickLink } from "@/utils/interface/Link";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 
 const Footer = () => {
   const quickLinks: IQuickLink[] = [
@@ -43,7 +44,9 @@ const Footer = () => {
   ];
 
   return (
-    <section className="mt-16 px-8 sm:px-16 lg:px-32 py-16 flex justify-between items-center gap-16 bg-[#F6F6F7] dark:bg-black dark:text-white">
+    <>
+    <section className="mt-16 px-8 sm:px-16 lg:px-32 py-16 flex justify-between items-start gap-16 bg-[#F6F6F7] dark:bg-black dark:text-white">
+    
       <div className="flex flex-col gap-3">
         <h4 className="text-lg">About</h4>
         <p className="w-60">
@@ -61,7 +64,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-20 px-20">
+      <div className="flex gap-20 px-16">
       <div className=" flex flex-col gap-6">
         <h4>Quick Link</h4>
         <div className="flex flex-col gap-2 text-descriptionColor">
@@ -87,22 +90,18 @@ const Footer = () => {
 
     
 
-      <div className="p-16 flex flex-col gap-5 bg-white rounded-xl">
-        <div>
-          <h4>Weekly Newsletter</h4>
+      <div className="p-12 flex flex-col gap-5 bg-white rounded-xl border-b-orange">
+        <div className="flex flex-col items-center gap-2">
+          <h4 className="text-titleColor text-xl font-semibold">Weekly Newsletter</h4>
           <p>Get Blogs and Articles via email</p>
         </div>
 
         <div className="flex flex-col gap-4">
-          <div className="relative rounded-lg border-solid">
-            <input
-              type="text"
-              className=" w-full py-3 px-4 border-solid rounded-lg border-borderColor"
-              placeholder="Your email"
-            />
+          <div className="relative ">
 
+          <Input type="email" placeholder="Your email" />
             <svg
-              className="absolute top-[15px] right-[10px]"
+              className="absolute top-[10px] right-[10px]"
               width="20"
               height="20"
               viewBox="0 0 20 20"
@@ -122,11 +121,20 @@ const Footer = () => {
                 fill="#696A75"
               />
             </svg>
+
           </div>
           <Button className="bg-blue-600 w-full hover:bg-blue-800">Subscribe</Button>
         </div>
       </div>
     </section>
+
+    <div className="pt-16 bg-[#F6F6F7] px-8 sm:px-16 lg:px-32 py-16 flex justify-between items-center ">
+        <div className="flex flex-col">
+          <p className="text-xl text-[#141624]">Next<span className="text-xl font-extrabold text-[#141624]">Blog</span></p>
+          <p>All Rights Reserved.</p>
+        </div>
+    </div>
+    </>
   );
 };
 
